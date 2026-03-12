@@ -345,7 +345,7 @@ process.on("SIGTERM", () => shutdown("SIGTERM"));
 // ─────────────────────────────────────────────
 // Startup — restore persisted channels
 // ─────────────────────────────────────────────
-const savedChannels = loadState();
+const savedChannels = loadState() || {};
 const savedCount = Object.keys(savedChannels).length;
 if (savedCount > 0) {
   console.log(`[RESTORE] Restoring ${savedCount} channel(s) from state.json...`);
