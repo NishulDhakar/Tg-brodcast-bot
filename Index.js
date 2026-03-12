@@ -1,4 +1,10 @@
 require("dotenv").config();
+
+const express = require("express");
+const app = express();
+app.get("/", (_, res) => res.send("Bot running"));
+app.listen(process.env.PORT || 3000);
+
 const TelegramBot = require("node-telegram-bot-api");
 const fs = require("fs");
 const path = require("path");
